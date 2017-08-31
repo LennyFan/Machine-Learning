@@ -15,9 +15,9 @@ def f((x1,x2)):
             dis = geometry_distance(m.gdf.loc[[x1]],m.gdf.loc[[x2]])
         except:
             print("Connection refused by the server..")
-            print("Let me sleep for 5 seconds")
+            print("Let me sleep for 60 seconds")
             print("ZZzzzz...")
-            time.sleep(5)
+            time.sleep(60)
             print("Was a nice sleep, now let me continue...")
             continue
     
