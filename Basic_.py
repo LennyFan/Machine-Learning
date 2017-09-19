@@ -15,3 +15,20 @@ copy = list(nums)
 s = "lenny"
 print(s.replace("e", "a"))
 >>> "lanny"
+
+
+
+# list [::]
+# [start:end:step]
+nums = [1,2,3,4,5,6]
+
+nums[::-1] == [6,5,4,3,2,1]
+nums[:0:-2] == [6,4,2]
+nums[:-1:-1] == []
+
+nums[:-1:3] = [1,4]
+
+
+
+
+
