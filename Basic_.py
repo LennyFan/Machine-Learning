@@ -31,4 +31,21 @@ nums[:-1:3] = [1,4]
 
 
 
+# customized sort function
+# 
+a = [[1,2],[5,6]]
+def cmp_items(a, b):
+    if a[0] > b[0]: # 由小到大
+        return 1
+    elif a[0] == b[0]:
+        return 0
+    else:
+        return -1
+a.sort(cmp_items)
 
+
+# Dictionary
+#
+# iteration
+for key,val in Dic.iteritems():
+    print key,val
