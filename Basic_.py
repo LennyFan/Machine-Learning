@@ -45,6 +45,9 @@ a.sort(cmp_items)
 
 
 # Dictionary
+#
+# max( dic, key = func )
+# https://stackoverflow.com/questions/26871866/print-highest-value-in-dict-with-key
 # https://stackoverflow.com/questions/18296755/python-max-function-using-key-and-lambda-expression
 #
 # iteration
