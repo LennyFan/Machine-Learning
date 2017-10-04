@@ -45,6 +45,7 @@ a.sort(cmp_items)
 
 
 # Dictionary
+# https://stackoverflow.com/questions/18296755/python-max-function-using-key-and-lambda-expression
 #
 # iteration
 for key,val in Dic.iteritems():
