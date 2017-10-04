@@ -1,6 +1,7 @@
 inport heapq
 # for all k
 # a[k] <= a[2*k+1] and a[k] <= a[2*k+2] 
+# we can use this to achieve shortest-path algorithm
 
 q = []
 
