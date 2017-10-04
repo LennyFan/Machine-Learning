@@ -44,6 +44,11 @@ def cmp_items(a, b):
 a.sort(cmp_items)
 
 
+# customized max/min function
+max(a, key = lambda p: p[2])
+max(a, key = lambda p: p.score)
+
+
 # Dictionary
 #
 # max( dic, key = func )
