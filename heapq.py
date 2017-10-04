@@ -65,5 +65,7 @@ adjacent = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
                       [0, 0, 2, 0, 0, 0, 6, 7, 0]
            ]
 print Dijkstra_python(adjacent,0)
-
+# different to print item in dictionary
+#print max(Dijkstra_python(adjacent,0).values())
+#print max(Dijkstra_python(adjacent,0).items(),key = lambda p: p[1] )
 > {0: 0, 1: 4, 2: 12, 3: 19, 4: 21, 5: 11, 6: 9, 7: 8, 8: 14}
