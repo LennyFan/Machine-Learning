@@ -58,3 +58,12 @@ max(a, key = lambda p: p.score)
 # iteration
 for key,val in Dic.iteritems():
     print key,val
+    
+# function as objects(item)
+def foo():
+    pass
+def bar():
+    pass
+dic = {'foo': foo, 'bar': bar}
+dic['foo']()
+
