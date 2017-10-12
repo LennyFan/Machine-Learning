@@ -22,10 +22,12 @@ while q:
 > [(7, 'sleep')]
 > []
 # <<< Note that if two entry have same value, heapq will pop by the alphabetical order >>>
+# not always true, better way to do this is set a number ord('a') ... to get the number
 
 #### Q: If the priority of a task changes, how do you move it to a new position in the heap?
 # if key has already in your heapq, then change the key to be "<removed>"
 # use this way to update the heapq and remaint the property
+
 
 pq = []
 track = {}
