@@ -67,3 +67,13 @@ def bar():
 dic = {'foo': foo, 'bar': bar}
 dic['foo']()
 
+
+# bin
+a = 6
+bin(a)
+> '0b110'
+
+# count()
+a = "aaaabbbcca"
+a.count('a')
+> 5
