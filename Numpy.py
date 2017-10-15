@@ -11,3 +11,5 @@ a == b
 > [True, True, True]
 
 
+np.sum(np.array([[True,False,True], [False, True, True]])) 
+> 4
