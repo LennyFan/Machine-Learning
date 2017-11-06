@@ -15,15 +15,19 @@ def binary(list_,l,r):
   
 
 # while loop
-l,r = 0, len(list_)-1
-res = None
-
-while (l <= r):
-  mid = (l+r)/2
-  if list_[mid] <= ???:
-    res = list_[mid]
-    l = mid+1
-  else:
-    r = mid-1
-
-return res
+def binarySearch(nums, target):
+    l, r = 0, len(nums)-1       # first position, and last position
+    while l < r:
+        med = (l+r)/2           # we can modify this to (l+r+1)/2 if we want to find the last target
+        if nums[med] == target:
+            r = med             # if we want to find first left
+        elif nums[med] < target:
+            l = med+1
+        else:
+            r = med-1
+    if nums[l] == target:
+        return [l,0]
+    elif nums[l] < target:
+        return [l,1]
+    else:
+        return [l,-1]
