@@ -20,42 +20,10 @@
 -2.c.1
 
 === First.fst ===
-fst type                                          vector
-arc type                                          standard
-input symbol table                                Byte symbols
-output symbol table                               Byte symbols
-n of states                                       20
-n of arcs                                         25
-initial state                                     18
-n of final states                                 2
-n of input/output epsilons                        17
-n of input epsilons                               17
-n of output epsilons                              17
-input label multiplicity                          1.4
-output label multiplicity                         1.4
-n of accessible states                            20
-n of coaccessible states                          20
-n of connected states                             20
-n of connected components                         1
-n of strongly conn components                     16
-
+> States: 20, Arcs: 25
 
 === Second.fst ===
-fst type                                          vector
-arc type                                          standard
-input symbol table                                **Byte symbols
-output symbol table                               **Byte symbols
-# of states                                       13
-# of arcs                                         16
-initial state                                     11
-# of final states                                 1
-# of input/output epsilons                        10
-# of input epsilons                               10
-# of output epsilons                              10
-input label multiplicity                          1.375
-output label multiplicity                         1.375
-# of accessible states                            13
-# of coaccessible states                          13
-# of connected states                             13
-# of connected components                         1
-# of strongly conn components                     10
+> States: 13, Arcs: 16
+
+=== Disagreements.fst ===
+> States: 88, Arcs: 113
