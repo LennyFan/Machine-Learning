@@ -79,7 +79,9 @@
 
 > export Parity1 =  ( (Bit Bit)* : "0" ) | ( Bit* - (Bit Bit)*  : "1" ) ;
 
->
+> We(& Transducer) think it should be 0.
+
+- 5.d
 
 
 
