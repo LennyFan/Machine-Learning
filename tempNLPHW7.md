@@ -51,7 +51,13 @@
 
 > export Oddlets = Odds? (Zero+ Odds)* Zero* ;
 
+-4.a
 
+> a (b* | c+ | empty) a
+
+-4.b
+
+> 
 
 
 
