@@ -68,6 +68,18 @@
 > States: 10, Arcs: 16
 
 
+-5.a
+> export BitFlip1 = ( ("0":"1") | ("1":"0") )* ;
+
+-5.b
+
+> export BitFlip2 = CDRewrite[BitFlip1, "" , "" , Digit*, 'sim', 'obl' ] ;
+
+-5.c
+
+> export Parity1 =  ( (Bit Bit)* : "0" ) | ( Bit* - (Bit Bit)*  : "1" ) ;
+
+>
 
 
 
