@@ -27,3 +27,15 @@
 
 === Disagreements.fst ===
 > States: 88, Arcs: 113
+
+-2.c.2
+Without calling Optimize[], We can considered the regexp of Disagreements into two cases, therefore the drawing shows two separate sub-FSAs. In fact, without optimization, even the drawing of the case " First | First " will show that it immediatelly branches at the start state into two separate sub-FSAs. 
+
+-2.c.3
+It should be same, cause the regexp of two cases are same.
+
+-2.d
+Same as the result of binary.grm. Since there is no sentence can be generated using FSA of Disagreements, the FASs will be empty after optimization.
+
+
+-3.a
