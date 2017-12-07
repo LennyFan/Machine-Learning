@@ -40,8 +40,9 @@ Same as the result of binary.grm. Since there is no sentence can be generated us
 
 -3.a
 
->Triple = One One One+;
->export Triplets = (Zero* Triple*)*;
+> Triple = One One One+;
+
+> export Triplets = (Zero* Triple*)*;
 
 
 
