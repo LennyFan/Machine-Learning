@@ -40,8 +40,18 @@ Same as the result of binary.grm. Since there is no sentence can be generated us
 
 -3.a
 
-> Triple = One One One+;
+Triple = One One One+;
+
 export Triplets = (Zero* Triple*)*;
+
+-3.b
+
+export NotPillars = (Zero* One*)* - Disagreements - Evens ;
+
+-3.c
+
+export Oddlets = Odds? (Zero+ Odds)* Zero* ;
+
 
 
 
