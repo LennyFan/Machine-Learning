@@ -68,20 +68,42 @@
 > States: 10, Arcs: 16
 
 
--5.a
-> export BitFlip1 = ( ("0":"1") | ("1":"0") )* ;
+- 5.
 
--5.b
+```
+Bit = "0" | "1" ;
+Digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
-> export BitFlip2 = CDRewrite[BitFlip1, "" , "" , Digit*, 'sim', 'obl' ] ;
+# 4.
+export Cross = Optimize["a" (("b":"x")* | ("c"+ : "y"*) | ("":"fric")) "a"];
 
--5.c
+# 5.
+# (a.)
+export BitFlip1 = ( ("0":"1") | ("1":"0") )* ;
 
-> export Parity1 =  ( (Bit Bit)* : "0" ) | ( Bit* - (Bit Bit)*  : "1" ) ;
+# (b.)
+export BitFlip2 = CDRewrite[BitFlip1, ""  , "" , Digit*, 'sim', 'obl' ] ;
 
-> We(& Transducer) think it should be 0.
+# (c.)
+export Parity1 =  ( (Bit Bit)* : "0" ) | ( Bit* - (Bit Bit)*  : "1" ) ;
 
-- 5.d
+# (d.)
+export Parity2 = Reverse[Parity1] ;
+
+# (e.)
+export Parity3 = CDRewrite[ Parity1, "[BOS]", "[EOS]", Bit*, 'ltr', 'obl' ] ;
+
+# (f.)
+export UnParity = Invert[Parity3] ; # inverse function, valid inpur 1,0
+
+# (g.)
+export Split = CDRewrite[ ( ("1" : ("1 "| "1" )) | ("0":("0 "| "0")) )* , "[BOS]" , Bit "[EOS]" , (Bit | " ")*, 'sim', 'obl' ] ;
+
+# (h.)
+Threeway = Bit+ " " Bit+ " " Bit+ ;
+export SplitThree = Split @ Threeway ;
+```
+
 
 
 
