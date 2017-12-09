@@ -145,6 +145,9 @@ The size of TransformNP is same as the size of NP. For any possible ouput of NP,
 
 -6.d
 
+BracketNP only takes NP and convert it into <NP>
+
+Brackets1 takes SigmaStar (NP SigmaStar)* and converts it into SigmaStar (<NP> SigmaStar)*. Since SigmaStar can take ""(empty), the output of Brackets1 
 
 
 
