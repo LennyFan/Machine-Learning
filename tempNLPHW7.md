@@ -104,6 +104,47 @@ Threeway = Bit+ " " Bit+ " " Bit+ ;
 export SplitThree = Split @ Threeway ;
 ```
 
+-6.a.2
+
+> States: 16, Arcs: 20
+
+-6.b
+
+```
+# (a.)
+export NP = Optimize[( "Art" | "Quant" )? "Adj"* "Noun"+ ] ;
+
+# (b.)
+export MakeNmod = CDRewrite[ ("Noun" : "Nmod")*  , "" , "Noun" (tags.Tags-"Noun")*, tags.Tags* ,'sim', 'obl' ]  ;
+
+# (c.)
+export TransformNP = Optimize[NP @ MakeNmod];
+
+```
+
+-6.c
+
+i. The transducer only takes input in NP format and replaces "Noun" with "Nmod" before any "Noun", otherwise return "Rewrite failed."
+
+ii. 
+```
+Input string: ArtAdjNounNounNoun
+Output string: ArtAdjNmodNmodNoun
+
+Input string: AdjNounNounNounVerb
+Rewrite failed.
+```
+
+iii.
+
+Much smaller since all the possible output of NP is a subset of the output of tag.Tags*, the ouput of TransformNP is smaller than MakeNmod.
+
+iv.
+
+The size of TransformNP is same as the size of NP. For any possible ouput of NP, we can pair it with an unique ouput of TransformNP. Vice versa.
+
+-6.d
+
 
 
 
