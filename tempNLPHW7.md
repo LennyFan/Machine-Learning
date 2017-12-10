@@ -186,6 +186,11 @@ Output string: incomm'unicado
 Output string: 'incomm'unic'ado
 ```
 
+-7.c
+
+```
+export StressWords = CDRewrite[Stress, (" " | "[BOS]" ), ( " " | "[EOS]" ) , bytelib.kBytes*, 'ltr', 'obl' ] ;
+```
 
 
 
