@@ -210,3 +210,64 @@ export AddStress123Y =  CDRewrite[ ("" : "'" ) NewNucleus  ,  ("[BOS]" NewConson
 export StressY = AddStress123Y @ ( OneNucleusY | (Sigma | "^" | "_" )* - (NewConsonant* NewNucleus NewConsonant*) ) ;
 export test = CheckYforYes @ StressY @ CDRewrite[ ("_":"y") | ("^" | "Y") , "", "" , (Sigma | "^" | "_" )* , 'ltr', 'obl' ] ;
 ```
+
+-8.a
+
+stove/ move/ love
+
+-8.b
+
+-8.c
+
+The regular language defined by Results is starting with 1 stressed vowel which followed by 2 unstressed vowel and repeat. 
+
+> ( Stressed_Vowel Unstressed_Vowel Unstressed_Vowel )* 
+
+> ex. ordering      AO1 R D ER0 IH0 NG
+
+```
+# legal example
+export Pronounce = StringFile[’data/cmudict.txt’];
+input: ordering
+output: AO1 R D ER0 IH0 NG
+
+export StressPattern = CDRewrite[(Sigma-bytelib.kDigit) : "", "","",Sigma*,’sim’,’obl’];
+input: AO1 R D ER0 IH0 NG
+output: 100
+
+# ( 1 stressed vowel followed by 2 unstressed vowel )*
+export Dacytl = ("1" | "2") "0" "0"; 
+input: 100
+output: 100
+
+# Therefore, combining all of this
+export Results = Optimize[Project[Pronounce @ StressPattern @ (Dacytl*), ’input’]];
+input: ordering
+output: ordering
+```
+
+> ordinances      AO1 R D AH0 N AH0 N S IH0 Z
+
+```
+# illegal example
+export Pronounce = StringFile[’data/cmudict.txt’];
+input: ordinances
+output: AO1 R D AH0 N AH0 N S IH0 Z
+
+export StressPattern = CDRewrite[(Sigma-bytelib.kDigit) : "", "","",Sigma*,’sim’,’obl’];
+input: AO1 R D AH0 N AH0 N S IH0 Z
+output: 1000
+
+# ( 1 stressed vowel followed by 2 unstressed vowel )*
+export Dacytl = ("1" | "2") "0" "0"; 
+input: 1000
+Rewrite failed.
+
+# Therefore, combining all of this
+export Results = Optimize[Project[Pronounce @ StressPattern @ (Dacytl*), ’input’]];
+input: ordinances
+Rewrite failed.
+```
+
+
+
