@@ -147,7 +147,29 @@ The size of TransformNP is same as the size of NP. For any possible ouput of NP,
 
 BracketNP only takes NP and convert it into <NP>
 
-Brackets1 takes SigmaStar (NP SigmaStar)* and converts it into SigmaStar (<NP> SigmaStar)*. Since SigmaStar can take ""(empty), the output of Brackets1 
+Brackets1 takes SigmaStar (NP SigmaStar)* and converts it into SigmaStar (<NP> SigmaStar)*. 
+
+Brackets2 convert any possible NP into <NP>.
+
+The difference between Brackets2 and Brackets1 is that Brackets1 can leave the NP as NP ( since NP is a subset of SigmaStar ), but Brackets2 wil convert all possible NP to <NP>.
+
+-6.e
+
+-6.f
+
+-6.g
+
+-7.a
+
+```
+export OneNucleus =  Consonant* ("":"'") Nucleus Consonant* ;
+export AddStress123 =  CDRewrite[ ("" : "'" ) Nucleus  ,  ("[BOS]" Consonant* | Consonant+ Nucleus Consonant+ ) , ( Consonant+ Nucleus ), Sigma*, 'ltr', 'obl' ] ;
+export Stress = AddStress123 @ ( OneNucleus | Sigma* - (Consonant* Nucleus Consonant*) ) ;
+
+export BackwardStress = Invert[Stress] ;
+```
+
+-
 
 
 
