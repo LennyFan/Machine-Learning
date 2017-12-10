@@ -219,7 +219,7 @@ stove/ move/ love
 
 -8.c
 
-The regular language defined by Results is starting with 1 stressed vowel which followed by 2 unstressed vowel and repeat. 
+The regular language defined by Results is starting with 1 stressed vowel which followed by 2 unstressed vowel and repeat or the language with no vowel such as "w". 
 
 > ( Stressed_Vowel Unstressed_Vowel Unstressed_Vowel )* 
 
@@ -270,4 +270,26 @@ Rewrite failed.
 ```
 
 
+-8.d
+```
+import 'byte.grm' as bytelib;
+import 'arpabet.grm' as arpabet;
+Sigma = bytelib.kGraph | bytelib.kSpace;
+
+
+# get symbol table TH, M, AH0 ....
+arpa = SymbolTable['arpabet.sym'];
+
+# parsed the string from byte mode to arpa mode
+# take TH as one symbol...
+Pronounce = StringFile['cmudict.txt', byte, arpa];
+
+#
+StressPattern = CDRewrite[( arpabet.Consonant : "".arpa ) , "".arpa, "".arpa , arpabet.Phoneme* ,  'sim', 'obl'];
+Dacytl = ( arpabet.Stressed arpabet.Unstressed arpabet.Unstressed )* ;
+
+export Results = Optimize[Project[Pronounce @ StressPattern @ (Dacytl*), 'input']];
+export ListResults = "" : Results;
+
+```
 
