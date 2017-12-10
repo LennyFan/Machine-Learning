@@ -169,7 +169,24 @@ export Stress = AddStress123 @ ( OneNucleus | Sigma* - (Consonant* Nucleus Conso
 export BackwardStress = Invert[Stress] ;
 ```
 
--
+-7.b
+```
+Input string: ev'apor'ating
+Output string: ev'aporating
+Output string: ev'apor'ating
+
+Input string: 'incomm'unic'ado
+Output string: incomm'unic'ado
+Output string: incommunic'ado
+Output string: incommunicado
+Output string: 'incommunic'ado
+Output string: 'incommunicado
+Output string: 'incomm'unicado
+Output string: incomm'unicado
+Output string: 'incomm'unic'ado
+```
+
+
 
 
 
