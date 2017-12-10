@@ -194,4 +194,19 @@ export StressWords = CDRewrite[Stress, (" " | "[BOS]" ), ( " " | "[EOS]" ) , byt
 
 
 
+-7.d
+```
+export CheckY = CDRewrite[ ("y":"_") | ("Y" | "^") , "[BOS]" | Consonant+ , Consonant+ | ( Nucleus*  "[EOS]") , ("_" |Sigma | "^")*, 'ltr' , 'obl' ] ;
 
+# consider yes,yea.... y should be consonant in this case
+export CheckYforYes = CheckY @( ((("^":"Y") | ("_":"y")) Nucleus ) | ( (Sigma | "^" | "_" )* - (("^"|"_") Nucleus ) ) ) ;
+
+NewVowel = Vowel | "^" | "_" ;
+NewConsonant = Letter - NewVowel ;
+NewNucleus = NewVowel+ ;
+
+export OneNucleusY =  NewConsonant* ("":"'") NewNucleus NewConsonant* ;
+export AddStress123Y =  CDRewrite[ ("" : "'" ) NewNucleus  ,  ("[BOS]" NewConsonant* | NewConsonant+ NewNucleus NewConsonant+ ) , ( NewConsonant+ NewNucleus ), (Sigma | "^" | "_" )* , 'ltr', 'obl' ] ;
+export StressY = AddStress123Y @ ( OneNucleusY | (Sigma | "^" | "_" )* - (NewConsonant* NewNucleus NewConsonant*) ) ;
+export test = CheckYforYes @ StressY @ CDRewrite[ ("_":"y") | ("^" | "Y") , "", "" , (Sigma | "^" | "_" )* , 'ltr', 'obl' ] ;
+```
