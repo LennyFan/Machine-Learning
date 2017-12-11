@@ -314,3 +314,14 @@ range? 255+70 or 70+52
 ```
 export WordEnding = Optimize[ Pronounce @ Ending ] ;
 ```
+
+-8.g
+
+the input should be legal input defined by cmudict(a-z), and the output should be a set of words which have same "rhyming ending" which should also be legal words in cumdict.
+
+-8.h
+
+Time Comlexity to compose two FST is O(v1 v2 d1 (log d2 + m2)), where
+> vi = # of states visited, di = maximum out-degree, and mi = maximum multiplicity of the states visited.for the ith FST. 
+
+Thus since WordEnding and Inver[WordEnding] are both quite large and messy, it took a lot of time t
