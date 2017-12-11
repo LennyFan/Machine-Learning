@@ -375,3 +375,76 @@ No words has same rhyme as orange.
 the FST can't rewrite adventureland since adventureland is not in cmudict.
 
 -8.j
+
+Since regular relations do not include copy languages, we somehow need to get the new Pronounce FST which is a subset of Pronounce with no trivial rhyme ending words before we compose with End.
+
+
+-9.a
+
+> "001", "011" : 1.7
+
+```
+Input string: 001
+Output string: 1011
+
+Input string: 011
+Output string: 1111
+
+Min-Weight: 1.95
+```
+
+-9.b
+
+
+-9.c
+
+# 9 (c.)
+
+(x,y) = ( 00 , 1)
+
+```
+export Flips = ( Zero : (One<1> ) | ( Zero <2>) ) | ( One:  (One<3> ) | ( Zero <4>) ) ;
+
+export a = Flips Flips ;
+export WeightedMultipath  =  a  @ ( ( Bit: One <83> ) ( (One : ""  <5> ) | ( Zero: "" <11> ) ) | ( (One: "" <78> ) | ( Zero: ""  <886> ) ) ( Bit: One <66> ) )  ;
+
+export WeightedMultipathOpt = Optimize[WeightedMultipath];
+
+```
+
+There are four output after machine FlipTwice 
+
+```
+Input : 00
+Output string: 00 <cost=4> 
+Output string: 10 <cost=3> 
+Output string: 11 <cost=2> 
+Output string: 01 <cost=3> 
+```
+
+Then we compose this four ouput with WeightedMultipath which will have only one output 1 with 2 different weight. Thus, the result will be 4*2 = 8 different ouputs. 
+
+```
+ex.
+Input : 11 <cost = 2>
+Output string: 1 <cost=2+83+5> # this one is minimum = 90
+Output string: 1 <cost=2+78+66>
+
+Input : 00 <cost = 4>
+Output string: 1 <cost=4+83+11>
+Output string: 1 <cost=4+886+66>
+
+Input : 10 <cost = 3>
+Output string: 1 <cost=3+83+11>
+Output string: 1 <cost=3+78+66>
+
+Input : 01 <cost = 3>
+Output string: 1 <cost=3+83+5>
+Output string: 1 <cost=3+886+66>
+
+```
+
+
+
+
+
