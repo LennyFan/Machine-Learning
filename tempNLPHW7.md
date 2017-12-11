@@ -293,3 +293,22 @@ export ListResults = "" : Results;
 
 ```
 
+-8.e 
+```
+# (e.)
+# rhyme ending
+export Ending = ( arpabet.Phoneme : "".arpa)* arpabet.Stressed  ( arpabet.Phoneme - arpabet.Stressed )* ;
+
+###### Qeust: what "[EOS]" "[BOS]" should be in arpa style ????
+###### export Ending = CDRewrite[ ( arpabet.Phoneme : "".arpa ) , "".arpa ,  arpabet.Stressed   ( arpabet.Phoneme - arpabet.Stressed )* "[EOS]"  , arpabet.Phoneme* ,  'sim', 'obl'];
+###### [BOS] and [EOS] in arpabet on Piazza.
+```
+
+-8.f
+
+domain? bytes(255) + arpabet (70) or Letter(52) + + arpabet (70)
+
+range?
+```
+export WordEnding = Optimize[ Pronounce @ Ending ] ;
+```
