@@ -365,4 +365,13 @@ Input string: orange
 Output string: orange
 
 
+export InvWordEnding = ("adventureland" @ WordEnding) @ Invert[WordEnding] ;
+Input string: adventureland
+Rewrite failed.
 ```
+
+No words has same rhyme as orange.
+
+the FST can't rewrite adventureland since adventureland is not in cmudict.
+
+-8.j
