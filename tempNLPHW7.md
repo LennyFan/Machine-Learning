@@ -319,6 +319,9 @@ export WordEnding = Optimize[ Pronounce @ Ending ] ;
 
 the input should be legal input defined by cmudict(a-z), and the output should be a set of words which have same "rhyming ending" which should also be legal words in cumdict.
 
+alphabet(a-z)
+
+
 -8.h
 
 Time Comlexity to compose two FST is O(v1 v2 d1 (log d2 + m2)), where
@@ -328,5 +331,38 @@ Thus since WordEnding and Inver[WordEnding] are both quite large and messy, it t
 
 -8.i
 
-Therefore if we hardcode the i
+Therefore if we hardcode the input first ("w") and compose with WordEnding, the result FST is quite small which has only one legal input "w" and one single ouput "AH1 B AH0 L Y UW0". 
 
+```
+export W_WordEnding = "w" @ WordEnding ;
+export W_InvWordEnding = W_WordEnding @ Invert[WordEnding] ;
+```
+
+Thus, W_WordEnding @ Invert[WordEnding] is quite fast because the first FST is quite small.
+
+```
+export InvWordEnding = ("wood" @ WordEnding) @ Invert[WordEnding] ;
+
+Input string: wood
+Output string: would
+Output string: understood
+Output string: misunderstood
+Output string: withstood
+Output string: stood
+Output string: wood
+Output string: could
+Output string: good
+Output string: schuld
+Output string: suhud
+Output string: fulwood
+Output string: should
+Output string: goode
+Output string: hood
+
+export InvWordEnding = ("orange" @ WordEnding) @ Invert[WordEnding] ;
+
+Input string: orange
+Output string: orange
+
+
+```
