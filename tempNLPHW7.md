@@ -308,7 +308,9 @@ export Ending = ( arpabet.Phoneme : "".arpa)* arpabet.Stressed  ( arpabet.Phonem
 
 domain? bytes(255) + arpabet (70) or Letter(52) + + arpabet (70)
 
-range?
+range? 255+70 or 70+52
+
+
 ```
 export WordEnding = Optimize[ Pronounce @ Ending ] ;
 ```
