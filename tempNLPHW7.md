@@ -415,6 +415,7 @@ export WeightedMultipathOpt = Optimize[WeightedMultipath];
 There are four output after machine FlipTwice 
 
 ```
+# flip the input
 Input : 00
 Output string: 00 <cost=4> 
 Output string: 10 <cost=3> 
@@ -425,7 +426,8 @@ Output string: 01 <cost=3>
 Then we compose this four ouput with WeightedMultipath which will have only one output 1 with 2 different weight. Thus, the result will be 4*2 = 8 different ouputs. 
 
 ```
-ex.
+# either transfer the first binary number to 1 and second binary number to "" or transfer the second binary number to 1 and first binary number to "". 
+
 Input : 11 <cost = 2>
 Output string: 1 <cost=2+83+5> # this one is minimum = 90
 Output string: 1 <cost=2+78+66>
@@ -443,6 +445,8 @@ Output string: 1 <cost=3+83+5>
 Output string: 1 <cost=3+886+66>
 
 ```
+
+Therefore, thereare 8 different paths and 8 different weights.
 
 
 
