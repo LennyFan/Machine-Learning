@@ -446,7 +446,7 @@ Output string: 1 <cost=3+886+66>
 
 ```
 
-Therefore, thereare 8 different paths and 8 different weights.
+Therefore, there are 8 different paths and 8 different weights.
 
 
 
