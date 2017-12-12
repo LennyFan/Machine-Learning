@@ -555,7 +555,44 @@ If we only care about words, maybe we can consider bytelib.kAlpha instead of byt
 For RandomWord, since the average length of word is 5.1, we would like to increase w1 and decrease w2 to avoid long letters word.
 
 
+```
+# (a.)
+
+export DelSpaces = Optimize[CDRewrite[ " ": "" , "", "", ByteSigmaStar, 'ltr', 'obl' ]] ;
 
 
+# (b.)
+
+
+# (c.) (d.)
+
+export SpellTextByteToVocab =  (ByteSigma+ @ Invert[Spell] ("" : " ".vocab ) )* ;
+export SpellText =  ( Spell @ (ByteSigma - " " )+ ) ( (" ".vocab : " ") ( Spell @ (ByteSigma - " " )+ )  )*  ;
+
+Generate =  LM @ ( SpellText @ DelSpaces ) ;
+# Decode = ( (( ByteSigmaStar @ Invert[DelSpaces]) @ Invert[SpellText] ) @ Invert[LM] ) @ SpellText ;
+
+Decode = ( "ifonly" @ Invert[Generate] ) @ SpellText ;
+
+
+
+# (e.)
+
+export RandomChar = bytelib.kGraph <4.54>;
+export RandomWord = Optimize[(RandomChar (RandomChar <0.1>)* ) <2.3>];
+export SpellOOV = "<unk>".vocab : RandomWord;
+
+
+# (f.)
+
+export RSpell = Spell | ( SpellOOV : "<unk>" )  ;
+
+TextTrans =  ( RSpell @ (ByteSigma - " " )+ ) ;
+PrintText = ( TextTrans ) ( (" ".vocab : " ") TextTrans  )*  ;
+
+RGenerate =  LM @ ( PrintText @ DelSpaces ) ;
+export RDecode = ( "ifonly" @ Invert[RGenerate] ) @ SpellText ;
+
+```
 
 
