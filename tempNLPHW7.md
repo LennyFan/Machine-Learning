@@ -488,6 +488,41 @@ export NoDet = ( "1" : ( "1" <1> )* ) ;
 
 
 
+-10.d
+
+Thank is not in entrain.sym
+
+-10.e
+
+```
+export CompleteWord = (( ByteSigma+  ( "" :  ByteSigmaStar ) ) @ Invert[Spell]) @ LM ;
+
+Input string: barr
+Output string: barriers <cost=19.314678>
+Output string: barrels <cost=19.616245>
+Output string: barrel <cost=19.993179>
+Output string: barrage <cost=20.031265>
+Output string: barrier <cost=20.048843>
+
+
+Input string: barriers
+Output string: barriers <cost=19.314991>
+Input string: barrels
+Output string: barrels <cost=19.615818>
+Input string: barrel
+Output string: barrel <cost=19.993179>
+Input string: barrage
+Output string: barrage <cost=20.031345>
+Input string: barrier
+Output string: barrier <cost=20.048569>
+Input string: barriers 
+```
+
+Only "barrels" cost equal to the unigram probability of word. Other results are slightly different from the unigram probabiliy. 
+
+
+
+
 
 
 
