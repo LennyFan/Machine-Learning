@@ -548,7 +548,13 @@ Then exp(-w1) + exp(-w2) > 1, which we can not trnasfer back to probability unle
 
 The cost of random words will decrease
 
--
+-11.e.vi
+
+If we only care about words, maybe we can consider bytelib.kAlpha instead of bytelib.kGraph which also includes the punc, number and space. Therefore, we can assign weight 1.71600 to RandomChar. 
+
+For RandomWord, since the average length of word is 5.1, we would like to increase w1 and decrease w2 to avoid long letters word.
+
+
 
 
 
