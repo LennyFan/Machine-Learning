@@ -522,8 +522,33 @@ Only "barrels" cost equal to the unigram probability of word. Other results are 
 
 
 
+-11.e.i
 
+w1 is the - log probability of there is another randomchar after current char
 
+w2 is the - log probability of there is no char after current char
+ 
+> Notice that exp(-w1) + exp(-w2) = 1
+
+-11.e.ii
+
+p_n = (1/94)^n * 0.9^{n-1} * 0.1
+
+-11.e.iii
+
+sum p_n = 0.1/94 sum (0.9/94)^{n-1} = 0.1/94  * ( 1 - r^n ) / 1- r
+
+-11.e.iv
+
+dncrease w1 such that exp(-w1) + exp(-w2) = 1
+
+-11.e.v
+
+Then exp(-w1) + exp(-w2) > 1, which we can not trnasfer back to probability unless we normalize it first
+
+The cost of random words will decrease
+
+-
 
 
 
