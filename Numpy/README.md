@@ -1,7 +1,7 @@
-## Array
-
-Create nxm matrix
-
+### Create nxm matrix
+- array
+- random
+- insert
 ```python
 import numpy as np
 
@@ -13,5 +13,15 @@ np.random.rand(n,m)
 
 # zero
 np.zeros((n,m))
+
+```
+
+### Add Column
+
+- insert 
+```python
+# insert 1 at first column
+a = np.zeros((n,m))
+b = np.insert( a , 0, 1, axis = 1)
 
 ```
