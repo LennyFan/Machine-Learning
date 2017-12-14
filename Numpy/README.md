@@ -25,3 +25,14 @@ a = np.zeros((n,m))
 b = np.insert( a , 0, 1, axis = 1)
 
 ```
+
+### Operation
+
+```python
+# dot
+a.dot(b)
+np.dot(a,b)
+
+# inverse
+np.inv(a)
+```
