@@ -26,7 +26,7 @@ b = np.insert( a , 0, 1, axis = 1)
 
 ```
 
-### Operation
+### LinearAlgebra
 
 ```python
 # dot
@@ -34,5 +34,5 @@ a.dot(b)
 np.dot(a,b)
 
 # inverse
-np.inv(a)
+np.linalg.inv(a)
 ```
