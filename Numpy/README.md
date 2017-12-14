@@ -27,7 +27,7 @@ b = np.insert( a , 0, 1, axis = 1)
 ```
 
 ### LinearAlgebra
-
+- linalg
 ```python
 # dot
 a.dot(b)
