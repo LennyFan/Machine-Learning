@@ -23,7 +23,7 @@ def kmp(self,a, b):
             else:
                 index_b[j] = 0
                 j += 1
-                i = 1
+                i = 0
 
 
         i,j = 0,0
