@@ -46,12 +46,11 @@ def check_d2(a,b):
             elif i>0:
                 dic[(i,j)] = help(a[i],b[j]) + dic[(i-1,j)] - help(a[i-1],b[j]) + ord(a[i-1])
             elif j>0:
-                if j == 1 and i == 0:
-                    print help(a[i],b[j])  + dic[(i,j-1)] - help(a[i],b[j-1]) + ord(b[j-1])
                 dic[(i,j)] = help(a[i],b[j]) + dic[(i,j-1)] - help(a[i],b[j-1]) + ord(b[j-1])
             else:
                 dic[(i,j)] = help(a[i],b[j])
     
+    # delete eveything after [i,len(b)-1]
     dic[(0, len(b))] =  dic[(0, len(b)-1)]
     for i in xrange(1,len(a)):
         dic[(i,len(b))] = min(dic[(i-1,len(b))] + ord(a[i]), dic[(i,len(b)-1)])
