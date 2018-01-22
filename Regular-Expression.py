@@ -1,4 +1,3 @@
-
 # two way to solve
 # Dynamic programming or Recursive Function
 
@@ -35,6 +34,12 @@ def help(c1,c2):
         return 0
         
 def check_d2(a,b):
+    
+    if not a:
+        return sum([ord(char) for char in b])
+    if not b:
+        return sum([ord(char) for char in a])
+    
     dic = {}
     for i in xrange(len(a)):
         for j in xrange(len(b)):
