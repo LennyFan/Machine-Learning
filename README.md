@@ -6,6 +6,7 @@
 
 ```
 New
+------------------------------------
     basic
     numpy
     pandas
@@ -21,7 +22,7 @@ New
     
     
 Algorighm
-
+------------------------------------
     binary
     KNP
     logistic
@@ -29,7 +30,9 @@ Algorighm
     
     decode string
     
+    
 PythontoJava
+------------------------------------
     python-to-java
 ```
 
