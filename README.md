@@ -10,7 +10,7 @@ New
     basic
     numpy
     pandas
-      missing value filled 
+      missing value filled << reading: https://www.kaggle.com/dansbecker/handling-missing-values >>
       pandas readwrite
       pandasplot
       
